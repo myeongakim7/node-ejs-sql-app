@@ -6,15 +6,15 @@ const { Sequelize, DataTypes } = require("Sequelize");
 const sequelize = new Sequelize({
   // <- new 객체
   dialect: "sqlite", // db 종류
-  storage: "database.splite",
-}); // 파일명  - 저장방식 memomry, file
+  storage: "database.sqlite",
+}); // 파일명  - 저장방식 memory, file
 
 // Model(테이블) 생성
-const Posts = sequelize.isDefined("Posts", {
-  // creat(속성 정의)
+const Posts = sequelize.define("Posts", {
+  // create (속성 정의)
   post: {
-    type: DataTypes.string, // 문자형
-    allowNull: false, // NOR NULL = 필수값
+    type: DataTypes.STRING, // 문자형
+    allowNull: false, // NOT NULL (필수값)
   },
 });
 
